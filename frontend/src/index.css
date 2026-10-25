@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Noto Sans Devanagari", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  --color-ink: #14110c;
+  --color-ink-2: #1c1811;
+  --color-ink-3: #262016;
+  --color-line: #3a3122;
+  --color-paper: #f4ecdc;
+  --color-muted: #a99a7e;
+  --color-gold: #d9a93f;
+  --color-gold-2: #f0c867;
+  --color-ok: #6fbf73;
+  --color-warn: #e8a33c;
+  --color-bad: #e5624f;
+  --color-info: #7aa7d9;
+  --color-wa: #075e54;
+  --color-wa-2: #dcf8c6;
+}
+
+html, body, #root { height: 100%; }
+body {
+  background: radial-gradient(1200px 600px at 10% -10%, #2a2112 0%, transparent 60%) no-repeat fixed, var(--color-ink);
+  color: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+.num, .numcol td:last-child { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+.card { background: var(--color-ink-2); border: 1px solid var(--color-line); border-radius: 14px; }
+.btn { display: inline-flex; align-items: center; gap: .4rem; border-radius: 10px; padding: .5rem .9rem; font-weight: 600; font-size: .875rem; transition: all .15s; cursor: pointer; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.btn-gold { background: var(--color-gold); color: #1a1408; }
+.btn-gold:hover:not(:disabled) { background: var(--color-gold-2); }
+.btn-ghost { border: 1px solid var(--color-line); color: var(--color-paper); }
+.btn-ghost:hover:not(:disabled) { border-color: var(--color-gold); color: var(--color-gold-2); }
+.btn-bad { border: 1px solid #6b2b22; color: #ffb4a8; }
+.input { width: 100%; background: var(--color-ink); border: 1px solid var(--color-line); border-radius: 10px; padding: .55rem .75rem; color: var(--color-paper); font-size: .9rem; }
+.input:focus { outline: none; border-color: var(--color-gold); }
+.label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--color-muted); margin-bottom: .25rem; display: block; }
+.chip { display: inline-flex; align-items: center; gap: .25rem; font-size: .7rem; font-weight: 600; padding: .12rem .5rem; border-radius: 999px; border: 1px solid currentColor; white-space: nowrap; }
+.fade-in { animation: fade .35s ease both; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+/* karigar phone: light, WhatsApp-like, large tap targets */
+.phone { background: #ece5dd; color: #1b1b1b; }
+.phone .pcard { background: #fff; border-radius: 14px; box-shadow: 0 1px 2px rgba(0,0,0,.08); }
+.phone .pbtn { border-radius: 12px; padding: .8rem 1rem; font-weight: 700; font-size: 1rem; }
